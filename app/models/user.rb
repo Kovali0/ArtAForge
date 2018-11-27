@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #def user?
-  #  role.name == 'user'
-  #end
+  def user?
+    role.name == 'user'
+  end
 
   def fullname
     "#{email}"
   end
+
 end

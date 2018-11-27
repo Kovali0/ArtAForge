@@ -25,7 +25,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= current_user.fullname %>
-            <%= link_to 'Profile', new_user_registration_path, class: 'dropdown-item' %>
+            <%= link_to 'Profile', user_profile_path, class: 'dropdown-item' %>
             <%= link_to 'Edit', edit_user_registration_path, class: 'dropdown-item' %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
