@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   #routes to my views
   root 'index#home'
   get '/user_profile', to: 'users#user'
+  get '/new_art', to: 'users#new_art'
+  get '/show_art', to: 'users#show_art'
+  post '/new_art', to: 'users#new_art'
 end
