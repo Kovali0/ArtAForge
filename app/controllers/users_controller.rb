@@ -12,14 +12,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new_art
-    @user.images.attach(params[:images])
-  end
-
-  def show_art
-    @user.images.attach(params[:images])
-  end
-
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
@@ -28,7 +20,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:role_id, images: [])
+    params.require(:user).permit(:role_id)
   end
 
 end

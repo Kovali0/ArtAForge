@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :role
-  has_many_attached :images
+  has_many :arts
 
   def user?
     role.name == 'user'

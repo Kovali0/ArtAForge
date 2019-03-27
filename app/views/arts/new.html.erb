@@ -1,0 +1,22 @@
+<h1><center> Show Us your new art </center></h1>
+<div class="infoContainer">
+    <% if @art.errors.any? %>
+        <h2>The following errors prevented the article from saving:</h2>
+        <ul>
+        <% @art.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    <% end %>
+</div>
+<div class="uploadContainer">
+    <%= form_with model: @art, local: true  do |form| %>
+        <%= form.text_area :title %><br><br>
+        <hr />
+        <%= form.file_field :images, multiple: true %><br>
+        <hr />
+        <%= form.text_area :discription %><br><br>
+        <hr />
+        <%= form.submit %>
+    <% end %>
+</div>
