@@ -1,0 +1,16 @@
+<h1>Your Gallery of Arts</h1>
+<p>
+</p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% @user_arts.each do |art| %>
+  <tr>
+    <td><%= art.title %></td>
+    <td><%= art.description %></td>
+    <td><%= link_to 'Show', art_path(art) %></td>
+  </tr>
+  <% end %>
+</table>

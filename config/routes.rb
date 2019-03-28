@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   #routes to my views
   root 'index#home'
   get '/user_profile', to: 'users#user'
-  resources :arts
+  resources :arts do 
+    post :mygallery
+    get :mygallery
+  end
 end

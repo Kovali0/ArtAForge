@@ -25,6 +25,10 @@ class ArtsController < ApplicationController
     @art = Art.find(params[:id])
   end
 
+  def mygallery
+    @user_arts = current_user.arts.all
+  end
+
   private
     def art_params
       params.require(:art).permit(:title, :content, :author, :image)
