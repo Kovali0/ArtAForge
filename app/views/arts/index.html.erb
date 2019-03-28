@@ -2,15 +2,15 @@
 <p>
 </p>
 <table>
- <tr>
-  <th>Title</th>
-  <th>Description</th>
- </tr>
- <% @arts.each do |art| %>
- <tr>
-  <td><%= art.title %></td>
-  <td><%= art.description %></td>
-  <td><%= link_to 'Show', art_path(art) %></td>
- </tr>
- <% end %>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <% @arts.each do |art| %>
+  <tr>
+    <td><%= art.title %></td>
+    <td><%= art.description %></td>
+    <td><%= link_to 'Show', art_path(art) %></td>
+  </tr>
+  <% end %>
 </table>

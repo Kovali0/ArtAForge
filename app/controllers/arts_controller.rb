@@ -2,6 +2,7 @@ class ArtsController < ApplicationController
 
   def index
     @arts = Art.all
+    @user_arts = current_user.arts.all
   end
 
   def new
@@ -9,7 +10,9 @@ class ArtsController < ApplicationController
   end
 
   def create
-    @art = Art.new(art_params)
+    #@art = Art.new(art_params)
+    @art = current_user.arts.build(art_params)
+    @art.image.attach(params[:art][:image])
     if @art.save
       flash[:notice] = "Article was successfully created"
       redirect_to art_path(@art)
@@ -24,7 +27,7 @@ class ArtsController < ApplicationController
 
   private
     def art_params
-      params.require(:art).permit(:title, :content, :author, uploads: [])
+      params.require(:art).permit(:title, :content, :author, :image)
     end
 
 end
