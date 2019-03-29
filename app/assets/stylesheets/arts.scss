@@ -17,3 +17,39 @@
     opacity: 0.5;
     filter: alpha(opacity=50);
 }
+
+.btn-grad {
+    padding-left: 10%;
+    padding-top: 2.5%;
+    padding-right: 10%;
+    padding-bottom: 2.5%;
+    text-decoration-color: white;
+    font-family: "Proxima Nova Soft W03 Bold" !important;
+    background-image: linear-gradient(to right, #ff0084 0%, #33001b 51%, #ff0084 100%);
+}
+
+.btn-grad:hover {
+     background-position: right center; 
+}
+
+.imageBigCard {
+    padding: 5%;
+    color: white;
+    text-align: center;
+    font-family: "Proxima Nova Soft W03 Bold" !important;
+    background: radial-gradient(circle, rgb(184, 0, 240), black);
+    background-repeat: no-repeat;
+    background-color: red;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.imageViewBigCard {
+    height: auto; 
+    width: auto; 
+    max-width: 40%; 
+    max-height: 40%;
+    //transform: scale(0.5, 0.5);
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
