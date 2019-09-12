@@ -1,16 +1,15 @@
-<h1>Listing all arts</h1>
-<p>
-</p>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
-  <% @arts.each do |art| %>
-  <tr>
-    <td><%= art.title %></td>
-    <td><%= art.description %></td>
-    <td><%= link_to 'Show', art_path(art) %></td>
-  </tr>
-  <% end %>
-</table>
+<center><div class="titleGallery">Listing all arts</div></center>
+<% @arts.each do |art| %>
+  <div class="cardG">
+    <div class="artBox">
+      <% if art!=nil  %>
+        <center><div class="imgFormat", align="center"><%= image_tag art.image %></div></center>
+      <% end %>
+    </div>
+    <div class="cardcontext">
+      <p>Title: <%= art.title %></p>
+      <p>Author: <%= art.author %></p>
+      <p><%= link_to 'Show', art_path(art) %></p>
+    </div>
+  </div>
+<% end %>

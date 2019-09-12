@@ -1,6 +1,5 @@
-<div align="center">
-
-  <h2>Sign up</h2>
+<center><div class="formContainer">
+  <h4><div class="title">Sign up</div></h4>
   
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -29,9 +28,8 @@
     </div>
   
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", :class => 'buttonpurple' %>
     </div>
+    <%= render "devise/shared/links" %>
   <% end %>
-  
-  <%= render "devise/shared/links" %>
-</div>
+</div></center>

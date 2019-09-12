@@ -1,1 +1,20 @@
-<h1>Hello Rails</h1>
+<% if !user_signed_in? %> 
+<center><div class="homeContainer">
+    <h4><div class="title">Welcome in ArtAForge!</div></h4>
+    <h1><div class="titleHome">This is the special place, where you can find great and impresive graphic, drawing, sketches and photos.
+    In one word, a lot of nice ARTS! If you want you can start with us your artistic adventure!
+    are you interested in? Go ahead and register now by clicking on right top "Join ArtA".
+    Join us and show us your first great work!!! :D
+    
+    Have a nice day ^^
+    ArtAF Team</div></h1>
+</div></center>
+<% elsif user_signed_in? %> 
+<center><div class="homeContainer">
+    <h4><div class="title">Welcome in ArtAForge!</div></h4>
+    <h1><div class="titleHome">Let's go and see what is new at ArtAForge!</div></h1>
+    <h1><div class="titleHome">
+    Have a nice day ^^
+    ArtAF Team</div></h1>
+</div></center>
+<% end %>

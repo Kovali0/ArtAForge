@@ -1,26 +1,27 @@
-<section class="form-elegant">
-<center><h1><center> Show Us your new art </center></h1>
-<div class="infoContainer">
-    <% if @art.errors.any? %>
-        <h2>The following errors prevented the article from saving:</h2>
-        <ul>
-        <% @art.errors.full_messages.each do |msg|%>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    <% end %>
-</div>
-<div class="uploadContainer">
-    <%= form_with model: @art, local: true  do |form| %>
-        <%= form.text_area :title, class: "form-control", placeholder: "Title" %><br><br>
+<center><div class="uploadContainer">
+  <h4><div class="title">Show Us your new art! :)</div></h4>
+    <div class="infoContainer">
+      <% if @art.errors.any? %>
+          <h2>The following errors prevented the article from saving:</h2>
+          <ul>
+          <% @art.errors.full_messages.each do |msg|%>
+              <li><%= msg %></li>
+          <% end %>
+          </ul>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= form_with model: @art, local: true  do |form| %>
+        <%= form.text_area :title, class: "form-control", placeholder: "Title" %>
         <hr />
-        <%= form.file_field :image, class: "form-control" %><br>
+        <%= form.file_field :image, class: "form-control" %>
         <hr />
-        <%= form.text_area :description, class: "form-control", placeholder: "Description" %><br><br>
+        <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
         <hr />
+        <%= form.hidden_field :author, :value => current_user.nick %>
         <div class="text-center mb-3">
-            <%= form.submit "That's my new art!", class: "btn-grad btn-rounded" %>
+            <%= form.submit "That's my new art!", :class => 'buttonpurpleonart' %>
         </div>
     <% end %>
+    </div>
 </div></center>
-</section>

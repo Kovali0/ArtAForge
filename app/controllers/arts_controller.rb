@@ -3,6 +3,7 @@ class ArtsController < ApplicationController
   def index
     @arts = Art.all
     @user_arts = current_user.arts.all
+    @newest_art = Art.order("created_at").last
   end
 
   def new

@@ -6,6 +6,9 @@ class User < ApplicationRecord
   belongs_to :role
   has_many :arts
 
+  scope :artistscope, -> { where(role_id: '1') }
+  scope :userscope, -> { where(role_id: '2') }
+
   def user?
     role.name == 'user'
   end
